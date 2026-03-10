@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RunProof",
+  "type": "object",
+  "required": [
+    "run_id",
+    "lane",
+    "outcome",
+    "timestamp_local"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "lane": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "timestamp_local": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

@@ -1,62 +1,47 @@
-# Single-Agent Architecture
+# Single-Agent-Architecture
 
-A portable, open-source blueprint for building high-leverage AI workflows with **one agent + skills + memory**.
+An open-source framework for running a **24-hour single-agent engineering system** with:
+- hourly audits (H00-H09)
+- hourly PR attempts (H10-H19)
+- a persistent **2nd Brain** (Obsidian-friendly memory)
+- human-readable status updates
 
-## Core Idea
+## What this repo gives you
 
-Most teams add more agents to solve quality issues. This repo argues for a different default:
+1. **Prompt system** for audits, PR attempts, reporting, and memory.
+2. **Skill packs** so one agent can behave like a specialist without agent sprawl.
+3. **Contracts + schemas** to keep output consistent and machine-checkable.
+4. **Job manifests** for a full 24-hour lane map.
+5. **Examples + scripts** for bootstrapping your own setup.
 
-- Keep **one primary agent**
-- Encode specialization in **skill prompts**
-- Store institutional knowledge in a **memory vault**
-- Keep tooling as replaceable plumbing
+## Core architecture
 
-> "Ten markdown files and a folder of memories" is not a joke — it's the architecture.
+- **One primary agent** runs the whole day.
+- **Audits first** to discover and validate bugs.
+- **PR attempts second** to ship focused fixes.
+- **2nd Brain continuously updated** to avoid repeating mistakes.
+- **Human-in-the-loop** keeps approval and merge decisions manual.
 
-## Why this exists
+## Repository layout
 
-This repo supports a talk comparing:
+- `prompts/` prompt library (audits / PRs / 2nd brain / reporting)
+- `skills/` reusable skill modules (SKILL.md + references/scripts)
+- `contracts/` behavior and messaging rules
+- `schemas/` JSON schemas for status/proofs
+- `jobs/manifests/` H00-H19 cron-ready manifests
+- `scripts/` helper utilities
+- `examples/` sample inputs/outputs
+- `docs/` architecture docs and quickstart guides
 
-- single-agent, skill-routed systems
-- vs multi-agent orchestration-heavy systems
+## Fast start
 
-It includes practical templates for open-source contribution workflows (audit → fix → PR), memory loops (Obsidian-friendly), and reusable guardrails.
-
-## Repository Map
-
-- `context/` → canonical project context + guardrails
-- `skills/` → modular specialist prompts (audit, PR, memory)
-- `memory/` → schemas + examples for daily memory, audit logs, PR logs
-- `workflows/` → end-to-end single-agent runbooks
-- `audits/` → structured templates for security/perf/quality audits
-- `pr/` → PR quality gates + merge choreography templates
-- `docs/` → research notes, claim map, and speaking assets
-
-## Design Principles
-
-1. **Correctness > volume**
-2. **Shared context beats fragmented context**
-3. **Portable files beat framework lock-in**
-4. **Conversation loop stays human-in-the-loop**
-5. **Simple defaults first; parallelism only when truly independent**
-
-## Quick Start
-
-1. Copy this repo
+1. Read `docs/quickstart.md`
 2. Fill `context/AGENT_CONTEXT.md`
-3. Customize skill prompts in `skills/`
-4. Start logging runs in `memory/`
-5. Execute `workflows/audit-to-pr.md`
-
-## Safety + Redaction
-
-Before publishing your own version:
-
-- remove keys/tokens/secrets
-- remove private customer/user data
-- replace private repo names if needed
-- use `docs/REDACTION_CHECKLIST.md`
+3. Customize `contracts/messaging-contract.md`
+4. Customize prompt files under `prompts/`
+5. Load job manifests from `jobs/manifests/`
+6. Run and review outputs in your 2nd Brain
 
 ## License
 
-MIT (recommended). Replace if needed.
+MIT (replace if needed).

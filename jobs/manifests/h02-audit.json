@@ -1,0 +1,7 @@
+{
+  "hour": "H02",
+  "type": "audit",
+  "name": "Performance Audit",
+  "prompt": "prompts/audits/performance-audit.md",
+  "outcome": "AUDIT_DONE"
+}

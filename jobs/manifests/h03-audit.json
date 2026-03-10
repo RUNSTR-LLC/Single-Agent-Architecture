@@ -1,0 +1,7 @@
+{
+  "hour": "H03",
+  "type": "audit",
+  "name": "Security Audit",
+  "prompt": "prompts/audits/security-audit.md",
+  "outcome": "AUDIT_DONE"
+}

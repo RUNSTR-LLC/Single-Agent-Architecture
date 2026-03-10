@@ -1,0 +1,7 @@
+{
+  "hour": "H05",
+  "type": "audit",
+  "name": "Simplification Audit",
+  "prompt": "prompts/audits/simplification-audit.md",
+  "outcome": "AUDIT_DONE"
+}

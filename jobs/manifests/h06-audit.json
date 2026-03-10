@@ -1,0 +1,7 @@
+{
+  "hour": "H06",
+  "type": "audit",
+  "name": "Documentation Audit",
+  "prompt": "prompts/audits/docs-audit.md",
+  "outcome": "AUDIT_DONE"
+}

@@ -1,0 +1,7 @@
+{
+  "hour": "H04",
+  "type": "audit",
+  "name": "Health Audit",
+  "prompt": "prompts/audits/health-audit.md",
+  "outcome": "AUDIT_DONE"
+}

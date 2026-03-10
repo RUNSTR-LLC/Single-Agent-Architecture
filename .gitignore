@@ -3,3 +3,6 @@
 .env.*
 *.log
 node_modules/
+runtime/
+out/
+*.tmp

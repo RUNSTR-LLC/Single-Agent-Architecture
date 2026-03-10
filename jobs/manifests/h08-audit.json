@@ -1,0 +1,7 @@
+{
+  "hour": "H08",
+  "type": "audit",
+  "name": "Roadmap Audit",
+  "prompt": "prompts/audits/roadmap-audit.md",
+  "outcome": "AUDIT_DONE"
+}

@@ -1,0 +1,11 @@
+{
+  "hour": "H16",
+  "type": "pr_attempt",
+  "attempt": 7,
+  "prompt": "prompts/prs/pr-attempt.md",
+  "outcomes": [
+    "PR_CREATED",
+    "NO_PR",
+    "BLOCKED"
+  ]
+}

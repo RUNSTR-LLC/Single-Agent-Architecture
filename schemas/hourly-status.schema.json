@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HourlyStatus",
+  "type": "object",
+  "required": [
+    "hour",
+    "action",
+    "outcome",
+    "blocked",
+    "updated_at"
+  ],
+  "properties": {
+    "hour": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "blocked": {
+      "type": "boolean"
+    },
+    "next_step": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SecondBrainEntry",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "lane",
+    "summary"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string"
+    },
+    "lane": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "next_action": {
+      "type": "string"
+    }
+  }
+}

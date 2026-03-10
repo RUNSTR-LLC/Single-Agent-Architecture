@@ -1,0 +1,7 @@
+{
+  "hour": "H07",
+  "type": "audit",
+  "name": "Test Plan Audit",
+  "prompt": "prompts/audits/testplan-audit.md",
+  "outcome": "AUDIT_DONE"
+}

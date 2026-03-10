@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PrProof",
+  "type": "object",
+  "required": [
+    "status",
+    "bug",
+    "fix",
+    "updated_at"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "PR_CREATED",
+        "NO_PR",
+        "BLOCKED"
+      ]
+    },
+    "pr_number": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "bug": {
+      "type": "string"
+    },
+    "fix": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
