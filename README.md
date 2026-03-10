@@ -1,66 +1,87 @@
-# Single-Agent-Architecture
+# Single-Agent Architecture
 
-A portable framework for running an **OpenClaw-powered 24-hour single-agent contributor**.
+![Morpheus focus](assets/intro-morpheus.jpg)
 
-This system is designed to work on **any software project**, not just one specific codebase.
-The agent runs a full daily loop:
-- H00–H09: audits
-- H10–H19: PR attempts
-- continuous memory updates in a **2nd Brain** (Obsidian-friendly)
-- plain-English progress reporting for humans
+A practical blueprint for running a **24-hour AI contributor loop** with one primary agent, clear guardrails, and memory that actually compounds.
+
+This project exists for builders who want real output (audits, fixes, PRs, learning) without spinning up an overcomplicated swarm.
+
+## Why we built this
+
+Most teams trying agentic workflows hit the same wall: too many moving parts, not enough signal. We wanted a simpler system that still ships. So the default here is:
+
+- one primary agent
+- strong prompts + contracts
+- strict outcomes
+- memory-driven iteration
+- human supervision where it matters
+
+In short: fewer gears, more traction.
+
+## What we borrowed from `karpathy/autoresearch`
+
+`autoresearch` was a big inspiration for how to keep autonomous work disciplined. We adapted several core ideas:
+
+1. **Constrain the writable surface**  
+   Their loop limits where changes happen. We do the same by narrowing each run to one lane/task.
+
+2. **Use fixed run budgets**  
+   Their experiments run on a hard time budget. Our lanes do the same to avoid runaway sessions.
+
+3. **Score outcomes, not effort**  
+   Their keep/discard logic is metric-driven. We use explicit outcome contracts (`*_CREATED`, `*_BLOCKED`, `*_SKIPPED`) and quality gates.
+
+4. **Keep a simple run ledger**  
+   Their logging is lightweight and auditable. We mirror that with concise proof artifacts and memory entries.
+
+5. **Treat instructions like code**  
+   Their `program.md` model inspired our lane contracts and run-program files.
+
+We’re not copying the ML training workflow itself — we’re applying the same operating philosophy to software delivery.
 
 ## What this repo is
 
-This is a reference architecture for teams that want one reliable agent to:
-1. inspect code continuously,
-2. open focused improvement PRs,
-3. learn from outcomes over time,
-4. stay human-supervised.
+This is a portable reference architecture for teams that want an agent to:
+
+1. audit code continuously,
+2. attempt focused improvements,
+3. package reviewable PR outcomes,
+4. learn from results over time,
+5. stay aligned with human priorities.
 
 ## Who this is for
 
-- Maintainers of open-source projects
-- Solo builders who want continuous contributor support
-- Teams experimenting with agentic DevOps without multi-agent complexity
+- Open-source maintainers
+- Solo builders who want a reliable AI contributor loop
+- Small teams testing agentic DevOps without multi-agent complexity
 
-## OpenClaw focus
+## Repo layout
 
-The repository is structured so OpenClaw agents can recreate this workflow with:
-- prompt packs (`prompts/`)
-- skill packs (`skills/`)
-- contracts + schemas (`contracts/`, `schemas/`)
-- cron/job manifests (`jobs/manifests/`)
-
-## Project-agnostic by design
-
-Everything is template-driven.
-To adapt this framework to a new project, edit:
-- `context/AGENT_CONTEXT.md`
-- `context/PROJECT_PROFILE_TEMPLATE.md`
-- `contracts/messaging-contract.md`
-- prompt files in `prompts/`
-
-No repository-specific assumptions are required.
-
-## Repository layout
-
-- `prompts/` prompt library (audits / PRs / 2nd brain / reporting / ops)
-- `skills/` reusable skill modules (SKILL.md + optional references/scripts)
-- `contracts/` behavior contracts (messaging, outcomes, blocker semantics)
-- `schemas/` JSON schemas for status/proofs/memory entries
-- `jobs/manifests/` H00–H19 lane manifests
-- `docs/` architecture, quickstart, OpenClaw setup, portability guides
-- `examples/` sample output artifacts
-- `runtime/` local output area (gitignored by default in real deployments)
+- `prompts/` — lane prompts (audits, PR attempts, memory, reporting)
+- `skills/` — reusable skill modules (`SKILL.md` + references/scripts)
+- `contracts/` — behavior contracts (messaging, outcomes, blocker semantics)
+- `schemas/` — JSON schemas for status/proof/memory artifacts
+- `jobs/manifests/` — H00–H19 lane manifests
+- `docs/` — quickstart, architecture notes, OpenClaw setup
+- `examples/` — sample outputs
+- `runtime/` — local generated outputs (typically gitignored)
 
 ## Fast start
 
 1. Read `docs/quickstart.md`
 2. Read `docs/openclaw-setup.md`
 3. Fill `context/AGENT_CONTEXT.md`
-4. Load/adapt job manifests from `jobs/manifests/`
-5. Run lanes and review results in your 2nd Brain
+4. Adapt manifests from `jobs/manifests/`
+5. Run a day slice and review outputs in your memory vault / 2nd Brain
+
+## Design stance
+
+- correctness over volume
+- clarity over cleverness
+- one concern per run
+- explicit outcomes over status noise
+- humans approve what ships
 
 ## License
 
-MIT (replace if needed).
+MIT (replace if needed)
