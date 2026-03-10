@@ -6,40 +6,6 @@ A practical blueprint for running a **24-hour AI contributor loop** with one pri
 
 This project exists for builders who want real output (audits, fixes, PRs, learning) without spinning up dedicated agents for specific tasks.
 
-## System architecture
-
-```mermaid
-flowchart TD
-    H[Human Owner<br/>Strategy + Approvals] --> C[Contracts + Prompts<br/>program.md / lane specs]
-    C --> A[Single Primary Agent<br/>OpenClaw Runtime]
-
-    A --> L1[Audit Lanes H00-H09<br/>security / perf / docs / health...]
-    A --> L2[PR Lanes H10-H19<br/>one bounded fix attempt per run]
-    A --> L3[Ops Lanes H20-H23<br/>content / memory / recovery / closeout]
-
-    L1 --> Q[Priority Queue + Scoring]
-    Q --> L2
-
-    L2 --> G[GitHub Repo<br/>branch -> PR]
-    G --> R[CI + Review Signals]
-    R --> A
-
-    A --> P[Run Proofs<br/>JSON outcome artifacts]
-    A --> M[2nd Brain Memory<br/>Obsidian + daily logs]
-    P --> M
-    M --> C
-
-    A --> S[Status Updates<br/>plain-English contract output]
-    S --> H
-
-    classDef core fill:#1f2937,color:#fff,stroke:#111827,stroke-width:1px;
-    classDef data fill:#0f766e,color:#fff,stroke:#115e59,stroke-width:1px;
-    classDef io fill:#1d4ed8,color:#fff,stroke:#1e3a8a,stroke-width:1px;
-    class A,L1,L2,L3,Q core;
-    class P,M data;
-    class H,C,G,R,S io;
-```
-
 ## Why we built this
 
 Most teams trying agentic workflows hit the same wall: too many moving parts, not enough signal. We wanted a simpler system that still ships. So the default here is:
