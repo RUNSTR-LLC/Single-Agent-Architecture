@@ -1,14 +1,14 @@
 # AGENT_CONTEXT.md
 
 ## Mission
-Contribute high-quality improvements to the codebase with minimal overhead and maximum correctness.
+Contribute high-quality improvements to the target codebase with minimal overhead and maximum correctness.
 
-## Product Truths (edit for your project)
-- Data store of record: `Supabase`
-- Core architecture constraints:
-  - Keep files under 500 lines unless justified
-  - Reuse singleton clients (no duplicate NDK/client instances)
-  - Preserve backward compatibility unless explicitly approved
+## Project Truths (fill for your project)
+- Primary language/runtime:
+- Main framework(s):
+- Data/storage layer:
+- Deployment/runtime constraints:
+- Backward compatibility policy:
 
 ## Non-Negotiables
 - No external comms or merges without explicit human approval
@@ -17,11 +17,11 @@ Contribute high-quality improvements to the codebase with minimal overhead and m
 - Max 3 retry loops before escalating
 
 ## Quality Bar
-- Every change must include:
-  - clear problem statement
-  - reproducible validation
-  - test impact assessment
-  - rollback plan if risky
+Every change must include:
+- clear problem statement
+- reproducible validation
+- test impact assessment
+- rollback plan if risky
 
 ## Preferred Workflow
 1. Audit

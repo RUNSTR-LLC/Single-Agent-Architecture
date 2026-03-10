@@ -1,0 +1,30 @@
+# PROJECT_PROFILE_TEMPLATE
+
+Use this file to make prompts portable across projects.
+
+## Identity
+- PROJECT_NAME:
+- REPO_URL:
+- DEFAULT_BRANCH:
+- LOCAL_REPO_PATH:
+
+## Build + Test
+- INSTALL_COMMAND:
+- LINT_COMMAND:
+- TYPECHECK_COMMAND:
+- TEST_COMMAND:
+
+## PR Rules
+- MAX_FILES_PER_PR:
+- MAX_LOC_PER_PR:
+- REQUIRED_CHECKS:
+
+## Risk Rules
+- SAFE_AREAS:
+- SENSITIVE_AREAS:
+- NEVER_TOUCH_WITHOUT_APPROVAL:
+
+## Reporting
+- TIMEZONE:
+- TIME_FORMAT: 12-hour
+- UPDATE_STYLE: plain-english

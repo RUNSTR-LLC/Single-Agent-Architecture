@@ -1,18 +1,36 @@
 # Quickstart
 
-## 1) Pick one repo to operate on
-Set your target repo path in `context/AGENT_CONTEXT.md`.
+## Goal
+Run a 24-hour single-agent contributor loop on your own codebase.
 
-## 2) Keep scope strict
-Default loop:
+## Step 1: Configure context
+- Edit `context/AGENT_CONTEXT.md`
+- Copy `context/PROJECT_PROFILE_TEMPLATE.md` and fill values for your project
+
+## Step 2: Confirm communication format
+- Update `contracts/messaging-contract.md`
+- Keep updates short, plain English, and human-readable
+
+## Step 3: Choose lane scope
+Default mode:
 - H00-H09 audits
 - H10-H19 PR attempts
 
-## 3) Use plain-English updates
-Use templates in `prompts/reporting/`.
+Optional: add utility lanes only after core loop is stable.
 
-## 4) Persist memory every hour
-Use prompts in `prompts/second-brain/` and write into your Obsidian vault.
+## Step 4: Wire OpenClaw jobs
+- Use `jobs/manifests/` as source templates
+- Schedule each lane on hourly cadence in your OpenClaw cron setup
+- Keep blocker alerts conservative (execution failures only)
 
-## 5) Keep merge/release manual
-This framework opens PRs. Human reviews and merges.
+## Step 5: Run and review
+- Execute one day
+- Inspect proofs/status artifacts
+- Tune prompts and contracts
+- Repeat
+
+## Success checkpoint
+After day 1 you should have:
+- completed audit outputs
+- PR attempt outcomes (`PR_CREATED` / `NO_PR` / `BLOCKED`)
+- 2nd Brain entries that improve next-day behavior

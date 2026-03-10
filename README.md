@@ -1,46 +1,65 @@
 # Single-Agent-Architecture
 
-An open-source framework for running a **24-hour single-agent engineering system** with:
-- hourly audits (H00-H09)
-- hourly PR attempts (H10-H19)
-- a persistent **2nd Brain** (Obsidian-friendly memory)
-- human-readable status updates
+A portable framework for running an **OpenClaw-powered 24-hour single-agent contributor**.
 
-## What this repo gives you
+This system is designed to work on **any software project**, not just one specific codebase.
+The agent runs a full daily loop:
+- H00–H09: audits
+- H10–H19: PR attempts
+- continuous memory updates in a **2nd Brain** (Obsidian-friendly)
+- plain-English progress reporting for humans
 
-1. **Prompt system** for audits, PR attempts, reporting, and memory.
-2. **Skill packs** so one agent can behave like a specialist without agent sprawl.
-3. **Contracts + schemas** to keep output consistent and machine-checkable.
-4. **Job manifests** for a full 24-hour lane map.
-5. **Examples + scripts** for bootstrapping your own setup.
+## What this repo is
 
-## Core architecture
+This is a reference architecture for teams that want one reliable agent to:
+1. inspect code continuously,
+2. open focused improvement PRs,
+3. learn from outcomes over time,
+4. stay human-supervised.
 
-- **One primary agent** runs the whole day.
-- **Audits first** to discover and validate bugs.
-- **PR attempts second** to ship focused fixes.
-- **2nd Brain continuously updated** to avoid repeating mistakes.
-- **Human-in-the-loop** keeps approval and merge decisions manual.
+## Who this is for
+
+- Maintainers of open-source projects
+- Solo builders who want continuous contributor support
+- Teams experimenting with agentic DevOps without multi-agent complexity
+
+## OpenClaw focus
+
+The repository is structured so OpenClaw agents can recreate this workflow with:
+- prompt packs (`prompts/`)
+- skill packs (`skills/`)
+- contracts + schemas (`contracts/`, `schemas/`)
+- cron/job manifests (`jobs/manifests/`)
+
+## Project-agnostic by design
+
+Everything is template-driven.
+To adapt this framework to a new project, edit:
+- `context/AGENT_CONTEXT.md`
+- `context/PROJECT_PROFILE_TEMPLATE.md`
+- `contracts/messaging-contract.md`
+- prompt files in `prompts/`
+
+No repository-specific assumptions are required.
 
 ## Repository layout
 
-- `prompts/` prompt library (audits / PRs / 2nd brain / reporting)
-- `skills/` reusable skill modules (SKILL.md + references/scripts)
-- `contracts/` behavior and messaging rules
-- `schemas/` JSON schemas for status/proofs
-- `jobs/manifests/` H00-H19 cron-ready manifests
-- `scripts/` helper utilities
-- `examples/` sample inputs/outputs
-- `docs/` architecture docs and quickstart guides
+- `prompts/` prompt library (audits / PRs / 2nd brain / reporting / ops)
+- `skills/` reusable skill modules (SKILL.md + optional references/scripts)
+- `contracts/` behavior contracts (messaging, outcomes, blocker semantics)
+- `schemas/` JSON schemas for status/proofs/memory entries
+- `jobs/manifests/` H00–H19 lane manifests
+- `docs/` architecture, quickstart, OpenClaw setup, portability guides
+- `examples/` sample output artifacts
+- `runtime/` local output area (gitignored by default in real deployments)
 
 ## Fast start
 
 1. Read `docs/quickstart.md`
-2. Fill `context/AGENT_CONTEXT.md`
-3. Customize `contracts/messaging-contract.md`
-4. Customize prompt files under `prompts/`
-5. Load job manifests from `jobs/manifests/`
-6. Run and review outputs in your 2nd Brain
+2. Read `docs/openclaw-setup.md`
+3. Fill `context/AGENT_CONTEXT.md`
+4. Load/adapt job manifests from `jobs/manifests/`
+5. Run lanes and review results in your 2nd Brain
 
 ## License
 

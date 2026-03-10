@@ -7,6 +7,12 @@
 4. Emit plain-English update
 5. Save memory delta to 2nd Brain
 
+## OpenClaw Execution Model
+- One cron job per lane
+- Isolated lane sessions by default
+- Prompt path + outcome contract bound to each lane manifest
+- Human reviews PRs and decides merge/release
+
 ## Layers
 - Prompt layer (`prompts/`)
 - Skill layer (`skills/`)
@@ -17,3 +23,4 @@
 - `blocked=true` only for real execution failure
 - unresolved backlog != blocked lane
 - one lane, one outcome, one message
+- keep alerts quiet unless intervention is required
