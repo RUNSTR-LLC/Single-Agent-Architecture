@@ -4,7 +4,7 @@
 
 A practical blueprint for running a **24-hour AI contributor loop** with one primary agent, clear guardrails, and memory that actually compounds.
 
-This project exists for builders who want real output (audits, fixes, PRs, learning) without spinning up an overcomplicated swarm.
+This project exists for builders who want real output (audits, fixes, PRs, learning) without spinning up dedicated agents for specific tasks.
 
 ## Why we built this
 
